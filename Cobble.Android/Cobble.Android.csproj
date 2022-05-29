@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-android</TargetFramework>
+    <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+    <OutputType>Exe</OutputType>
+    <RuntimeIdentifiers>android-arm64;android-x86;android-arm;android-x64</RuntimeIdentifiers>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AssemblyName>Cobble</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants)TRACE;ANDROID</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants)TRACE;ANDROID</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Silk.NET" Version="2.15.0" />
+    <PackageReference Include="Silk.NET.OpenGLES.Extensions.ImGui" Version="2.15.0" />
+  </ItemGroup>
+  <Import Project="..\Cobble\Cobble.projitems" Label="Shared" />
+</Project>
